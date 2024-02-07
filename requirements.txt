@@ -7,3 +7,5 @@ Jinja2==2.11.3
 MarkupSafe==2.0.1
 Werkzeug==2.0.3
 wincertstore==0.2
+requests==3.3
+datetime==5.4
