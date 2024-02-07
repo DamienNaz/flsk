@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Adicionado para organizar os elementos verticalmente */
+        }
+
+        h1 {
+            text-align: center; /* Centraliza o texto do título */
+            margin-bottom: 20px; /* Adiciona um espaço entre o título e o formulário */
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtro jogos</h1>
+
+    <form method="post" action="{{ url_for('filter_games_form') }}">
+        <label for="min_minutes">Minutos - min:</label>
+        <input type="number" name="min_minutes" required min="1">
+
+        <label for="max_minutes">Minutos - max:</label>
+        <input type="number" name="max_minutes" required min="1">
+
+        <label for="min_goals">Golos - min:</label>
+        <input type="number" name="min_goals" required min="0">
+
+        <label for="max_goals">Golos - max:</label>
+        <input type="number" name="max_goals" required min="0">
+
+        <button type="submit">Filtrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Games</title>
+</head>
+<body>
+    <h1>Filtered Games</h1>
+
+    <form method="post" action="{{ url_for('filter_games') }}">
+        <label for="min_minutes">Min Minutes:</label>
+        <input type="number" name="min_minutes" required>
+
+        <label for="max_minutes">Max Minutes:</label>
+        <input type="number" name="max_minutes" required>
+
+        <label for="min_goals">Min Goals:</label>
+        <input type="number" name="min_goals" required>
+
+        <label for="max_goals">Max Goals:</label>
+        <input type="number" name="max_goals" required>
+
+        <button type="submit">Filter Games</button>
+    </form>
+
+    {% if games_info %}
+        <h2>Filtered Games:</h2>
+        <ul>
+            {% for game_info in games_info %}
+                <li>{{ game_info }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
