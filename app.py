@@ -32,12 +32,7 @@ def filter_games():
 
         url = "https://api-football-v1.p.rapidapi.com/v3/fixtures"
         querystring = {"live": "all"}
-
-        headers = {
-            "X-RapidAPI-Key": "42edaff283mshf3c8ef78d3fb068p15ff20jsn134491fdbdbf",
-            "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
-        }
-
+        
         response = requests.get(url, headers=headers, params=querystring)
 
         if response.status_code == 200:
